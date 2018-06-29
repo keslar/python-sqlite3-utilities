@@ -1,0 +1,83 @@
+{	
+	"tables":[
+	{	"table":"assets",
+		"fields":[
+			{	"name":"id", "type":"INTEGER", "constraints":[{"constraint":"PRIMARY KEY"},{"constraint":"AUTOINCREMENT"}]},
+			{	"name":"ip_addr", "type":"TEXT", "constraints":[{"constraint":"UNIQUE"}]},
+			{	"name":"hostname", "type":"TEXT", "constraints":[{"constraint":"UNIQUE"}]},
+			{	"name":"SERVICE_id", "type":"INTEGER" },
+			{	"name":"os", "type":"TEXT" },
+			{	"name":"os_version", "type":"TEXT" },
+			{	"name":"PLATFORM_id", "type":"integer" },			
+			{	"name":"ENVIRONMENT_id", "type":"integer" },
+			{	"name":"DEPARTMENT_id", "type":"INTEGER" }
+		]
+	},
+	
+	{	"table":"services",
+		"fields":[
+			{	"name":"id", "type":"INTEGER", "constraints":[{"constraint":"PRIMARY KEY"},{"constraint":"AUTOINCREMENT"}]},
+			{	"name":"service", "type":"TEXT" },
+            {   "name":"description", "type":"TEXT" }
+		]
+	},
+		
+	{	"table":"platforms",
+		"fields":[
+			{	"name":"id", "type":"INTEGER", "constraints":[{"constraint":"PRIMARY KEY"},{"constraint":"AUTOINCREMENT"}]},
+			{	"name":"platform", "type":"TEXT" }
+		]
+	},
+	{	"table":"environements",
+		"fields":[
+			{	"name":"id", "type":"INTEGER", "constraints":[{"constraint":"PRIMARY KEY"},{"constraint":"AUTOINCREMENT"}]},
+			{	"name":"environment", "type":"TEXT" }
+		]
+	},
+	
+	{	"table":"departments",
+		"fields":[
+			{	"name":"id", "type":"INTEGER", "constraints":[{"constraint":"PRIMARY KEY"},{"constraint":"AUTOINCREMENT"}]},
+			{	"name":"department", "type":"text" }
+		]
+	},				
+	
+	{	"table":"asset_CVSSv3_values",
+		"fields":[
+			{	"name":"asset_id", "type":"INTEGER" },
+			{	"name":"confidentiality_requirement", "type":"TEXT" },
+			{	"name":"integrity_requirement", "type":"TEXT" },
+			{	"name":"availability_requirement", "type":"TEXT" }
+		]
+	}
+    
+    "indexes":[
+    {
+        "index":"sample",
+        "unique":"true",
+        "if":"NOT EXIST",
+        "table":"tablename",
+        "columns":[
+            {   "column":"columnname" },
+            {   "column":"columnname" }
+        ]
+        "where":"expression"
+    }
+    ]
+    
+    "data":[
+        "table":"tablename",
+        "row":[
+            "field":[
+                "column":"columnname",
+                "value":
+            ],
+            "field":[
+                "column":"columnname",
+                "value":
+            ]
+    ]
+] }
+
+
+
